@@ -45,14 +45,14 @@ const PageHero = ({
                 {tagline}
               </p>
             )}
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.9rem] font-light leading-[1.08] text-ink">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.9rem] font-light leading-[1.2] text-ink">
               {lightLine}
             </h1>
-            <p className="text-3xl sm:text-4xl lg:text-[2.9rem] font-extrabold leading-[1.08] text-ink">
+            <p className="text-3xl sm:text-4xl lg:text-[2.9rem] font-extrabold leading-[1.2] text-ink">
               {boldLine}
             </p>
             {tail && (
-              <p className="text-3xl sm:text-4xl lg:text-[2.9rem] font-light leading-[1.08] text-ink">
+              <p className="text-3xl sm:text-4xl lg:text-[2.9rem] font-light leading-[1.2] text-ink">
                 {tail}
               </p>
             )}
