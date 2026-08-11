@@ -90,15 +90,11 @@ const HeroSlider = () => {
                   <p className="text-[11px] uppercase tracking-[0.22em] font-bold text-magenta mb-4">
                     {slide.tagline}
                   </p>
-                  <h1 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light leading-[1.2] text-ink">
-                    {slide.lightLine}
+                  <h1 className="text-3xl sm:text-4xl lg:text-[3.1rem] leading-[1.28] tracking-[-0.01em] text-ink">
+                    <span className="block font-light">{slide.lightLine}</span>
+                    <span className="block font-extrabold">{slide.boldLine}</span>
+                    <span className="block font-light">{slide.tail}</span>
                   </h1>
-                  <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold leading-[1.2] text-ink">
-                    {slide.boldLine}
-                  </h2>
-                  <p className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light leading-[1.2] text-ink">
-                    {slide.tail}
-                  </p>
                 </motion.div>
 
                 {/* Body copy */}
