@@ -68,33 +68,31 @@ const HeroSlider = () => {
         observer
         observeParents
         watchOverflow
-        className="hero-swiper rounded-5xl overflow-hidden max-w-[88rem] mx-auto min-h-[32rem] lg:min-h-[40rem]"
+        className="hero-swiper rounded-5xl overflow-hidden max-w-[88rem] mx-auto min-h-[30rem] lg:min-h-[36rem]"
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
-            <div className="relative bg-hero-warm min-h-[32rem] lg:min-h-[40rem] flex flex-col overflow-hidden">
+            <div className="relative bg-hero-warm min-h-[30rem] lg:min-h-[36rem] flex flex-col overflow-hidden">
               {/* Soft light bloom */}
               <div
                 aria-hidden="true"
                 className="absolute -left-24 top-1/3 w-[28rem] h-[28rem] rounded-full bg-white/25 blur-3xl"
               />
 
-              <div className="relative z-10 px-6 sm:px-12 lg:px-16 pt-12 lg:pt-14">
+              <div className="relative z-10 px-6 sm:px-12 lg:px-16 pt-11 lg:pt-12">
                 {/* Headline */}
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  className="max-w-4xl"
+                  className="max-w-2xl"
                 >
-                  <div className="flex flex-wrap items-baseline gap-x-4">
-                    <h1 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light leading-[1.08] text-ink">
-                      {slide.lightLine}
-                    </h1>
-                    <span className="text-xs sm:text-sm text-ink/70 font-medium">
-                      {slide.tagline}
-                    </span>
-                  </div>
+                  <p className="text-[11px] uppercase tracking-[0.22em] font-bold text-magenta mb-4">
+                    {slide.tagline}
+                  </p>
+                  <h1 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light leading-[1.08] text-ink">
+                    {slide.lightLine}
+                  </h1>
                   <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold leading-[1.08] text-ink">
                     {slide.boldLine}
                   </h2>
@@ -108,19 +106,34 @@ const HeroSlider = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-8 max-w-md text-sm leading-relaxed text-ink/80"
+                  className="mt-7 max-w-md text-sm leading-relaxed text-ink/80"
                 >
                   {slide.body}
                 </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-7 sm:hidden"
+                >
+                  <CircleButton to={slide.to} size="md">
+                    {slide.cta.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </CircleButton>
+                </motion.div>
               </div>
 
               {/* Cut-out athletes flanking the circle CTA */}
-              <div className="relative z-10 mt-auto flex items-end justify-center gap-0 sm:gap-6 lg:gap-12 px-4">
+              <div className="relative z-10 mt-auto flex items-end justify-center gap-4 sm:gap-6 lg:gap-12 px-4">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                  className="h-52 sm:h-72 lg:h-[26rem] flex items-end"
+                  className="h-44 sm:h-64 lg:h-[21rem] flex items-end"
                 >
                   <img
                     src={slide.photos[0].src}
@@ -135,7 +148,7 @@ const HeroSlider = () => {
                   initial={{ opacity: 0, scale: 0.85 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="mb-6 sm:mb-14 lg:mb-24 shrink-0"
+                  className="hidden sm:block sm:mb-10 lg:mb-16 shrink-0"
                 >
                   <CircleButton to={slide.to} size="lg">
                     {slide.cta.map((line) => (
@@ -150,7 +163,7 @@ const HeroSlider = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="h-52 sm:h-72 lg:h-[26rem] flex items-end"
+                  className="h-44 sm:h-64 lg:h-[21rem] flex items-end"
                 >
                   <img
                     src={slide.photos[1].src}

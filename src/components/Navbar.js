@@ -48,7 +48,7 @@ const Navbar = () => {
           </Link>
 
           {/* Primary nav */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {primary.map((link) => (
               <Link
                 key={link.name}
@@ -74,7 +74,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4 shrink-0">
             <a
               href="tel:5551234567"
-              className="hidden md:flex items-center gap-2 text-sm font-bold text-ink hover:text-magenta transition-colors"
+              className="hidden xl:flex items-center gap-2 text-sm font-bold text-ink hover:text-magenta transition-colors"
             >
               <FontAwesomeIcon icon={faPhone} className="text-xs text-magenta" />
               (555) 123-4567

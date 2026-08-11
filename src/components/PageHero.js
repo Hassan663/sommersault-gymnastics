@@ -32,7 +32,7 @@ const PageHero = ({
         className="absolute -left-24 top-1/4 w-[26rem] h-[26rem] rounded-full bg-white/25 blur-3xl"
       />
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 items-end px-6 sm:px-12 lg:px-16 pt-14 lg:pt-16">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-end px-6 sm:px-12 lg:px-16 pt-14 lg:pt-16">
         {/* Copy */}
         <div className="pb-14 lg:pb-20">
           <motion.div
@@ -40,14 +40,14 @@ const PageHero = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: EASE }}
           >
-            <div className="flex flex-wrap items-baseline gap-x-4">
-              <h1 className="text-3xl sm:text-4xl lg:text-[2.9rem] font-light leading-[1.08] text-ink">
-                {lightLine}
-              </h1>
-              {tagline && (
-                <span className="text-xs sm:text-sm text-ink/70 font-medium">{tagline}</span>
-              )}
-            </div>
+            {tagline && (
+              <p className="text-[11px] uppercase tracking-[0.22em] font-bold text-magenta mb-4">
+                {tagline}
+              </p>
+            )}
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.9rem] font-light leading-[1.08] text-ink">
+              {lightLine}
+            </h1>
             <p className="text-3xl sm:text-4xl lg:text-[2.9rem] font-extrabold leading-[1.08] text-ink">
               {boldLine}
             </p>
@@ -63,7 +63,7 @@ const PageHero = ({
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.12, ease: EASE }}
-              className="mt-6 max-w-lg text-sm leading-relaxed text-ink/80"
+              className="mt-6 max-w-md text-sm leading-relaxed text-ink/80"
             >
               {body}
             </motion.p>
@@ -93,7 +93,7 @@ const PageHero = ({
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.2, ease: EASE }}
-            className="hidden lg:flex justify-center items-end h-[19rem] xl:h-[22rem] -mb-px"
+            className="hidden lg:flex justify-center items-end h-[17rem] xl:h-[20rem] pb-2"
           >
             <img
               src={photo}
