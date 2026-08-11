@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fdf6f1;
+  color: #6e6e6e;
+  letter-spacing: -0.01em;
+}
+
+/* Reference headings pair a light line with an extrabold line. */
+h1,
+h2,
+h3,
+h4 {
+  color: #1d1d1b;
+  letter-spacing: -0.03em;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdf6f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b01b5e;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8e1449;
+}
+
+/* Swiper controls, themed for the warm hero card. */
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev {
+  color: #b01b5e;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.75);
+  transition: background 0.2s ease;
+}
+
+.hero-swiper .swiper-button-next:hover,
+.hero-swiper .swiper-button-prev:hover {
+  background: #ffffff;
+}
+
+.hero-swiper .swiper-button-next::after,
+.hero-swiper .swiper-button-prev::after {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  background: #b01b5e;
+  opacity: 0.3;
+  width: 0.6rem;
+  height: 0.6rem;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #b01b5e;
+  opacity: 1;
+}
+
+:focus-visible {
+  outline: 3px solid #b01b5e;
+  outline-offset: 3px;
+}
+
+
+/* ═══════════════════════ Motion & hover primitives ═══════════════════════ */
+
+:root {
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Photo tiles: the image itself scales, the frame stays put, so nothing
+   outside the rounded corner ever moves. */
+.media-zoom {
+  overflow: hidden;
+}
+.media-zoom img {
+  transition: transform 0.7s var(--ease-soft);
+  will-change: transform;
+}
+.group:hover .media-zoom img,
+.media-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* Underline that sweeps in from the left on hover, and stays for the
+   current page. */
+.link-sweep {
+  position: relative;
+}
+.link-sweep::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--ease-soft);
+}
+.link-sweep:hover::after,
+.link-sweep[data-active='true']::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Arrow nudges forward when its row or button is hovered. */
+.nudge-x {
+  transition: transform 0.35s var(--ease-soft);
+}
+.group:hover .nudge-x {
+  transform: translateX(4px);
+}
+
+/* Shine sweep across primary buttons. */
+.shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.shine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 75%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.75s var(--ease-soft);
+  z-index: -1;
+}
+.shine:hover::before {
+  transform: translateX(120%);
+}
+
+/* The magenta shape behind a photo card drifts a little further out. */
+.offset-shape {
+  transition: transform 0.45s var(--ease-soft);
+}
+.group:hover .offset-shape {
+  transform: translate(0.85rem, 0.85rem);
+}
+
+/* Honour the OS-level reduced-motion preference everywhere, including
+   third-party CSS (Swiper) and the utilities above. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .media-zoom img,
+  .group:hover .media-zoom img,
+  .media-zoom:hover img,
+  .group:hover .offset-shape,
+  .group:hover .nudge-x {
+    transform: none !important;
+  }
+  .shine::before {
+    display: none;
+  }
+}

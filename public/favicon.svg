@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" rx="24" fill="#B01B5E"/>
+  <!-- A somersault: one bold open loop with the gymnast's head at its start.
+       Reduced to two heavy shapes so the mark still reads at 16px. -->
+  <path
+    d="M74 34 C82 56, 70 78, 48 78 C30 78, 20 66, 22 50"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="11"
+    stroke-linecap="round"
+  />
+  <circle cx="63" cy="24" r="11" fill="#FFFFFF"/>
+</svg>
