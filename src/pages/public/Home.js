@@ -4,7 +4,7 @@ import { EASE } from '../../lib/motion';
 import { useForm } from 'react-hook-form';
 import HeroSlider from '../../components/HeroSlider';
 import ClassPreview from '../../components/ClassPreview';
-import { facility, people } from '../../assets/photos';
+import { facility, people, cutouts } from '../../assets/photos';
 import {
   SectionHeading,
   CircleButton,
@@ -260,38 +260,12 @@ const Home = () => {
               </h2>
 
               {/* Line-art gymnast, echoing the reference illustration */}
-              <svg
-                viewBox="0 0 240 300"
-                className="w-56 h-72 text-magenta hidden sm:block"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                {/* Gymnast in an arabesque: supporting leg down, back leg lifted,
-                    torso arched, arms sweeping overhead. */}
-                <circle cx="150" cy="60" r="16" />
-                {/* arched torso */}
-                <path d="M143 75 C126 96, 112 120, 104 146" />
-                {/* leading arm sweeping up and back */}
-                <path d="M140 92 C158 72, 176 50, 186 24" />
-                {/* trailing arm reaching forward */}
-                <path d="M136 96 C112 92, 86 82, 64 64" />
-                {/* supporting leg to the floor */}
-                <path d="M104 146 C100 186, 96 226, 92 262" />
-                <path d="M92 262 C86 272, 78 278, 66 280" />
-                {/* lifted back leg, arcing up behind */}
-                <path d="M104 146 C136 156, 168 152, 194 130" />
-                <path d="M194 130 C206 124, 214 116, 218 106" />
-                {/* motion arc */}
-                <path
-                  d="M46 208 C82 246, 146 252, 200 220"
-                  strokeDasharray="4 9"
-                  strokeWidth="2"
-                />
-              </svg>
+              <img
+                src={cutouts.ribbon}
+                alt="Gymnast performing with a ribbon"
+                loading="lazy"
+                className="hidden sm:block w-auto h-72 lg:h-80 object-contain drop-shadow-xl"
+              />
             </div>
 
             {/* Form */}
