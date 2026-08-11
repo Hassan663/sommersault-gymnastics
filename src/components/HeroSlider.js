@@ -20,7 +20,7 @@ const HeroSlider = () => {
     {
       lightLine: 'Gymnastics school',
       boldLine: 'built on confidence',
-      tail: "for Sommer's Sault",
+      tail: 'at Sommersault',
       tagline: 'with care for every child',
       body: 'We teach persistence, focus and discipline — and we teach children to love a sport that stays with them for life. Come and see for yourself.',
       cta: ['Book a', 'free trial', 'class'],

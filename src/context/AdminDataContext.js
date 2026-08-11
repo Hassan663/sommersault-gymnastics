@@ -82,7 +82,7 @@ const SEED = {
     { id: 'tri_5', childName: 'Jonah Patel', childAge: 9, guardian: 'Anil Patel', email: 'anil@email.com', phone: '555-0155', classId: 'cls_tum', requested: '2026-08-09', status: 'New', note: '' },
   ],
   settings: {
-    gymName: "Sommer's Sault Gymnastics",
+    gymName: "Sommersault Gymnastics",
     email: 'hello@sommersault.gym',
     phone: '(555) 123-4567',
     address: '2847 Fitness Boulevard, Your City, State 12345',

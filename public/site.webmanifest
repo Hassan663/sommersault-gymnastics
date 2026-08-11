@@ -1,6 +1,6 @@
 {
   "short_name": "Sommersault",
-  "name": "Sommer's Sault Gymnastics",
+  "name": "Sommersault Gymnastics",
   "icons": [
     { "src": "favicon.ico", "sizes": "48x48", "type": "image/x-icon" },
     { "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any" },

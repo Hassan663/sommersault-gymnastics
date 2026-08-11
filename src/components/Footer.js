@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <img src={logo} alt="Sommer's Sault Gymnastics" className="h-10 mb-5" />
+            <img src={logo} alt="Sommersault Gymnastics" className="h-10 mb-5" />
             <p className="text-sm text-body leading-relaxed mb-6 max-w-xs">
               Confidence-first gymnastics coaching for ages 2–18, in a gym built around safe
               progression.

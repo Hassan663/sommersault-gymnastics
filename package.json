@@ -1,7 +1,7 @@
 {
   "name": "sommersault-gymnastics",
   "version": "1.0.0",
-  "description": "Sommer's Sault Gymnastics - Complete Website & CRM",
+  "description": "Sommersault Gymnastics - Complete Website & CRM",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",

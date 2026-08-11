@@ -37,10 +37,10 @@ const Navbar = () => {
       <div className="max-w-[88rem] mx-auto px-5 sm:px-8">
         <div className="flex items-center justify-between gap-8 py-4">
           {/* Logo */}
-          <Link to="/" className="shrink-0" aria-label="Sommer's Sault Gymnastics — home">
+          <Link to="/" className="shrink-0" aria-label="Sommersault Gymnastics — home">
             <motion.img
               src={logo}
-              alt="Sommer's Sault Gymnastics"
+              alt="Sommersault Gymnastics"
               className="h-14 sm:h-16 w-auto"
               whileHover={{ scale: 1.04 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
